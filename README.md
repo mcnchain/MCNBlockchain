@@ -1,21 +1,24 @@
 # MCNBlockchain
 
-This repository contains the core configuration files used for the MCN Blockchain mainnet setup.  
-No application logic or custom blockchain code is included — only the files required for infrastructure and deployment.
+This repository does **not** contain any custom blockchain code.  
+MCNBlockchain is fully based on the standard **Geth** (Go-Ethereum) client — everything works using Geth as-is.
+
+The repository only includes configuration and service files required to run the MCN mainnet:
 
 ## 📂 Files
 
-- **genesis-mainnet.json** — Mainnet genesis configuration used to initialize the network.
-- **geth.service** — Systemd service file for running the Geth node as a background process.
-- **split.js** — Helper script used for splitting and processing key-related data.
-- **splitter.service** — Systemd service for running the split.js script automatically.
-- **README.md** — Documentation for the repository.
+- **genesis-mainnet.json** — Ready-to-use mainnet genesis file.
+- **geth.service** — Systemd service for running a Geth node.
+- **split.js** — Small helper script (not blockchain code).
+- **splitter.service** — Service for running the helper script.
+- **README.md** — Documentation.
 
-## ✅ Purpose
+## ✅ Summary
 
-This repository exists to store and manage:
-- the official mainnet genesis file,
-- supporting system services,
-- utility scripts related to node operations.
+There is **no custom protocol**,  
+no smart contracts,  
+no modifications to Geth,  
+no application logic,  
+no blockchain code.
 
-It does *not* contain custom consensus code, or application modules.
+This repo only holds the **configuration files** used to run MCN mainnet on top of the standard Geth client.
