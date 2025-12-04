@@ -8,8 +8,10 @@ The repository only includes configuration and service files required to run the
 ## 📂 Files
 
 - **genesis-mainnet.json** — Ready-to-use mainnet genesis file.
-- **geth.service** — Systemd service for running a Geth node.
-- **README.md** — Documentation.
+- **geth-main.service** — Systemd service for running a first main node.
+- **geth-public.service** - Systemd service for running a public node.
+- **geth-additional-nodes.service** - Systemd service for running additional nodes.
+- **config.toml** — List of enodes to connect to the network (static nodes).
 
 ### DFD - Duplicate Fee Deduction
 
