@@ -1,0 +1,37 @@
+[Unit]
+Description=Geth (MCN chain second validator)
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+User=validator
+WorkingDirectory=/home/validator/node
+LimitNOFILE=1048576
+Restart=always
+RestartSec=5
+
+
+ExecStart=/opt/geth-1.13.11-stable/geth \
+  --datadir /home/validator/node/node \
+  --config /home/validator/node/node/config.toml \
+  --networkid 2325 \
+  --port 30303 \
+  --syncmode full \
+  --mine \
+  --miner.etherbase <validator address> \
+  --unlock <validator address> \
+  --password /home/validator/node/password.txt \
+  --miner.gasprice 49000000000 \
+  --maxpeers 50 \
+  --verbosity 3 \
+  --rpc.gascap 100000000 \
+  --rpc.txfeecap 100000000000 \
+  --http.vhosts "localhost" \
+  --http.corsdomain "http://127.0.0.1"
+
+
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=multi-user.target

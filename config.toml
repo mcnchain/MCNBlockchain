@@ -1,0 +1,4 @@
+[Node.P2P]
+StaticNodes = [
+    <list of enodes>
+]

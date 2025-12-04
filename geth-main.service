@@ -10,26 +10,23 @@ LimitNOFILE=1048576
 Restart=always
 RestartSec=5
 
-ExecStart=/usr/local/bin/geth \
+
+ExecStart=/opt/geth-1.13.11-stable/geth \
   --datadir /home/chain-user/BirChain/mainnet \
   --networkid 2325 \
-  --http --http.addr 127.0.0.1 --http.port 8545 \
-  --http.api eth,net,web3,txpool,debug,clique \
-  --ws --ws.addr 127.0.0.1 --ws.port 8546 \
-  --ws.api eth,net,web3,txpool \
-  --ws.origins "*" \
-  --http.vhosts "*" \
-  --http.corsdomain "*" \
   --port 30303 \
-  --authrpc.jwtsecret /home/chain-user/BirChain/jwt.txt \
   --syncmode full \
   --mine \
-  --gpo.ignoreprice 1428571428571 \
-  --miner.gasprice 1428571428571 \
   --miner.etherbase 0xfE4800cA5a48670cc5f591a51F517BA8F682D4Ae \
   --unlock 0xfE4800cA5a48670cc5f591a51F517BA8F682D4Ae \
   --password /home/chain-user/BirChain/password.txt \
-  --allow-insecure-unlock
+  --miner.gasprice 49000000000 \
+  --maxpeers 50 \
+  --verbosity 3 \
+  --rpc.gascap 100000000 \
+  --rpc.txfeecap 100000000000 \
+  --http.vhosts "localhost" \
+  --http.corsdomain "http://127.0.0.1"
 
 StandardOutput=journal
 StandardError=journal

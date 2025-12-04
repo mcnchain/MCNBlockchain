@@ -17,7 +17,7 @@
     }
   },
   "difficulty": "1",
-  "gasLimit": "900000000",
+  "gasLimit": "50000000",
   "baseFeePerGas": "15000000000000000",
   "alloc": {
     "0xfE4800cA5a48670cc5f591a51F517BA8F682D4Ae": {

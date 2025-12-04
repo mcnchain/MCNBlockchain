@@ -1,0 +1,35 @@
+[Unit]
+Description=Geth (MCN chain public node)
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+User=explore-user
+WorkingDirectory=/home/explore-user/mcn_node
+LimitNOFILE=1048576
+Restart=always
+RestartSec=5
+
+
+ExecStart=/opt/geth-1.13.11-stable/geth \
+  --datadir /home/explore-user/mcn_node/node \
+  --config /home/explore-user/mcn_node/node/config.toml \
+  --networkid 2325 \
+  --http --http.addr 0.0.0.0 --http.port 8545 \
+  --http.api eth,net,web3 \
+  --ws --ws.addr 0.0.0.0 --ws.port 8546 \
+  --http.vhosts="rpc.mcnchain.org" \
+  --http.corsdomain="https://rpc.mcnchain.org" \
+  --ws.api eth,net,web3 \
+  --port 30301 \
+  --syncmode full \
+  --maxpeers 50 \
+  --verbosity 3
+
+
+
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=multi-user.target
