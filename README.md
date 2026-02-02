@@ -5,7 +5,6 @@ MCNBlockchain is fully based on the standard **Geth** (Go-Ethereum) client — e
 
 The repository only includes configuration and service files required to run the MCN mainnet:
 
----
 
 ## 📂 Files
 
@@ -16,7 +15,6 @@ The repository only includes configuration and service files required to run the
 - **geth-explorer-node.service** - Systemd service for running node for explorer.
 - **config.toml** — List of enodes to connect to the network (static nodes).
 
----
 
 ## Node Types
 
@@ -32,13 +30,11 @@ The repository only includes configuration and service files required to run the
 ### 4. Explorer RPC Node
 
 
----
 
 ## P2P Static Peering
 
 Used to ensure stable validator connectivity and prevent network isolation.
 
----
 
 ## Security:
 
