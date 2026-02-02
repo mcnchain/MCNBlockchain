@@ -38,6 +38,6 @@ Used to ensure stable validator connectivity and prevent network isolation.
 
 ## Security:
 
-* No unlocked accounts on validator nodes
-* CORS restricted
-* VHosts restricted
+* Validator private keys are stored on isolated servers
+* RPC nodes do not hold unlocked accounts
+* Static peering reduces eclipse attack risks
