@@ -5,21 +5,21 @@ Wants=network-online.target
 
 [Service]
 User=chain-user
-WorkingDirectory=/home/chain-user/BirChain
+WorkingDirectory=/home/chain-user/node
 LimitNOFILE=1048576
 Restart=always
 RestartSec=5
 
 
 ExecStart=/opt/geth-1.13.11-stable/geth \
-  --datadir /home/chain-user/BirChain/mainnet \
+  --datadir /home/chain-user/node/mainnet \
   --networkid 2325 \
   --port 30303 \
   --syncmode full \
   --mine \
   --miner.etherbase 0xfE4800cA5a48670cc5f591a51F517BA8F682D4Ae \
   --unlock 0xfE4800cA5a48670cc5f591a51F517BA8F682D4Ae \
-  --password /home/chain-user/BirChain/password.txt \
+  --password /home/chain-user/node/password.txt \
   --miner.gasprice 49000000000 \
   --maxpeers 50 \
   --verbosity 3 \
